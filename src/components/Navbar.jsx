@@ -45,17 +45,13 @@ const Navbar = () => {
             fontFamily: 'var(--font-heading)',
             fontWeight: 900,
             fontSize: '1.4rem',
-            letterSpacing: '-0.5px',
-            lineHeight: 1,
-            background: 'linear-gradient(135deg, #00ff88, #00b3ff, #8d99ae)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
+            letterSpacing: '1px',
             textTransform: 'uppercase',
-            filter: 'drop-shadow(0 0 12px rgba(0, 255, 136, 0.5))',
+            display: 'flex',
+            alignItems: 'center'
           }}>
-            IRON<br/>
-            <span style={{ fontSize: '0.75rem', letterSpacing: '4px', opacity: 0.9 }}>CLAW</span>
+            <span style={{ color: '#00ff88', textShadow: '0 0 10px rgba(0,255,136,0.4)' }}>IRON</span>
+            <span style={{ color: '#ffffff' }}>CLAW</span>
           </span>
         </Link>
 
