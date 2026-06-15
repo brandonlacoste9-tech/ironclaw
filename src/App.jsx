@@ -1,4 +1,5 @@
 import React from 'react';
+import EmpireBar from './components/EmpireBar';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import DevToolsGrid from './components/DevToolsGrid';
@@ -35,6 +36,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
+      <EmpireBar />
       <Navbar />
       <main>
         <Routes>
