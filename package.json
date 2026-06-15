@@ -8,7 +8,8 @@
     "build": "node generate-sitemap.js && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tiktok": "node bot/generate_tiktok.cjs"
+    "tiktok": "node bot/generate_tiktok.cjs",
+    "shill": "node bot/discord_shill.cjs"
   },
   "dependencies": {
     "@stripe/stripe-js": "^9.8.0",
