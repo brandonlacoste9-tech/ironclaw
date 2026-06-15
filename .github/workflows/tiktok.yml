@@ -1,0 +1,36 @@
+name: Automate TikTok Generation
+
+on:
+  schedule:
+    # Runs at 8:00 AM UTC every single day
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  generate-tiktok:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install System Dependencies (FFmpeg)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Node Dependencies
+        run: npm install
+
+      - name: Generate Vertical Video
+        run: npm run tiktok
+
+      - name: Upload MP4 to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tiktok_render
+          path: bot/tiktok_renders/*.mp4
+          retention-days: 7
